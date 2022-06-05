@@ -1,9 +1,9 @@
 // this will hold the query 'GET_ME', which will execute the 'me' query set up using Apollo Server
 import { gql } from '@apollo/client';
 
-export const QUERY_ME = gql`
+export const GET_ME = gql`
   query me {
-    tech {
+    user {
       _id
       username
       email
