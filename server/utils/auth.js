@@ -19,7 +19,7 @@ module.exports = {
 
     if (!token) {
       // CHANGE TO RETURN REQ
-      return res.status(400).json({ message: 'You have no token!' });
+      return req;
     }
 
     // verify token and get user data out of it
@@ -29,12 +29,13 @@ module.exports = {
     } catch {
       console.log('Invalid token');
       // NO RES NEEDED
-      return res.status(400).json({ message: 'invalid token!' });
+      // return res.status(400).json({ message: 'invalid token!' });
     }
     // return req
     // no endpoint
     // send to next endpoint
-    next();
+    // next();
+    return req;
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
